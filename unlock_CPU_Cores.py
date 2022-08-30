@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os.path
 import time
-from multiprocessing import Pool
+from multiprocessing import Pool, Process
 from multiprocessing.dummy import Pool as ThreadPool
 
 import numpy as np
