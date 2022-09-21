@@ -8,7 +8,6 @@ from multiprocessing.dummy import Pool as ThreadPool
 import numpy as np
 import scipy.io.wavfile
 
-
 def gen_fake_data(filenames):
     print("generating fake data")
     try:
