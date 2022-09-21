@@ -1,8 +1,24 @@
 # Learning multiprocessing etc for better usage of CPU Cores
 
-## asyncio
-- cooperative pausing/waiting
-- good for IO bound
+## Requirements
+python 3.10.**      // I have actual version 3.10.7
+    python --version
+pip3
+    pip3 --version
+install scipy.io.wavfile and numpy
+    pip3 install scipy      // numpy will install too
+## Other way how to install (pipenv)
+Pipenv is like a venv, but simulates same environment on basic of creator OS
+without defining os path or so due to another way how to write path in other systems
+
+python 3.10.**      // I have actual version 3.10.7
+    python --version
+pip3
+    pip3 --version
+### Windows
+pip3 install pipenv
+pipenv -h           // shows help
+
 
 ### Global Interpreter Lock
 AKA GIL

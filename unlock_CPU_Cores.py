@@ -16,7 +16,7 @@ def gen_fake_data(filenames):
     except FileExistsError:
         pass
 
-    for filename in filenames:  # homework: convert this loop to pool too!
+    for filename in filenames:
         if not os.path.exists(filename):
             print(f"creating {filename}")
             gen_wav_file(filename, frequency=440, duration=60.0 * 4)
@@ -53,25 +53,6 @@ def etl_demo():
     start_t = time.perf_counter()
 
     print("starting etl")
-
-    # # asyncio
-    # # if i waiting for disc, or internet
-    # # -cooperative pausing/waiting
-    # # -good for IO bound
-    # for filename in filenames:
-    #     _, duration = etl(filename)
-    #     print(f"{filename} completed in {duration:.2f}s")
-
-    # # ThreadPool
-    # with ThreadPool() as pool:
-    #     results = pool.imap_unordered(etl, filenames)
-
-    #     for filename, duration in results:
-    #         print(f"{filename} completed in {duration:.2f}s")    
-
-    # Pool
-    # controling max of processes
-    # with Pool(processes=4) as pool:
     with Pool() as pool:
         results = pool.map(etl, filenames)
 
@@ -135,7 +116,6 @@ def compare_mp_map_to_normal():
 
 def main():
     etl_demo()
-    # compare_mp_map_to_normal()
 
 
 if __name__ == '__main__':
